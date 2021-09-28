@@ -24,24 +24,26 @@ def hacker_choices():
     print('3: See all exploits by others')
     print('4: Exit application')
     hacker_choice = input()
-    if(hacker_choice == '1'):
-        print('Enter new exploit:')
-        exploit = input()
-        cursor.execute("INSERT INTO exploits(content) VALUES (?)",[exploit])
-        conn.commit()
-        print('exploit created')
-    elif(hacker_choice == '2'):
-        cursor.execute("SELECT * FROM exploits WHERE user_id=")
-        exploit_list = cursor.fetchall()
-        for ex in exploit_list:
-            print(ex)
-    elif(hacker_choice == '3'):
-        cursor.execute("SELECT * FROM exploits WHERE user_id!=")
-        others_exploits = cursor.fetchall()
-        for others in others_exploits:
-            print(others)
-    else:
-        print('exited')
+    while hacker_choice.length == 1:
+        if(hacker_choice == '1'):
+            print('Enter new exploit:')
+            exploit = input()
+            cursor.execute("INSERT INTO exploits(content) VALUES (?)",[exploit])
+            conn.commit()
+            print('exploit created')
+        elif(hacker_choice == '2'):
+            cursor.execute("SELECT * FROM exploits WHERE user_id=")
+            exploit_list = cursor.fetchall()
+            for ex in exploit_list:
+                print(ex)
+        elif(hacker_choice == '3'):
+            cursor.execute("SELECT * FROM exploits WHERE user_id!=")
+            others_exploits = cursor.fetchall()
+            for others in others_exploits:
+                print(others)
+        else:
+            print('exited')
+            break
 
 
 try:
