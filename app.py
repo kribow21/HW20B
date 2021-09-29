@@ -18,13 +18,13 @@ def login_hacker():
         print('failed to login')
 
 def hacker_choices(hacker_login):
-    print('Select an option:')
-    print('1: Enter a new exploit')
-    print('2: See all your exploits')
-    print('3: See all exploits by others')
-    print('4: Exit application')
-    hacker_choice = input()
     while True:
+        print('Select an option:')
+        print('1: Enter a new exploit')
+        print('2: See all your exploits')
+        print('3: See all exploits by others')
+        print('4: Exit application')
+        hacker_choice = input()
         if(hacker_choice == '1'):
             print('Enter new exploit:')
             exploit = input()
